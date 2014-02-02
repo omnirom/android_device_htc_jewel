@@ -34,7 +34,7 @@ TARGET_BOOTLOADER_BOARD_NAME := jewel
 TARGET_KERNEL_CONFIG := jet_defconfig
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/jewel/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
@@ -76,9 +76,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_VOLD_MAX_PARTITIONS := 39
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/htc/jewel/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # TWRP
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 DEVICE_RESOLUTION := 720x1280
 TW_FLASH_FROM_STORAGE := true
 TW_DEFAULT_EXTERNAL_STORAGE := true

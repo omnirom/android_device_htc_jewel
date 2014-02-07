@@ -19,6 +19,7 @@ persist.radio.snapshot_enabled=1
 persist.radio.snapshot_timer=2
 persist.radio.use_nv_for_ehrpd=true
 persist.radio.always_send_plmn=true
+ro.telephony.tetherdunrequired=0
 ro.telephony.default_network=8
 telephony.lteOnCdmaDevice=1
 ro.telephony.call_ring.multiple=0

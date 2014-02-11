@@ -1,0 +1,5 @@
+#!/system/bin/sh
+case $(getprop ro.partitioning) in
+    old)  echo /mnt/shell/emulated;;
+    *)  echo /storage/sdcard0;;
+esac;;

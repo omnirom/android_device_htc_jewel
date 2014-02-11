@@ -1,0 +1,2 @@
+#!/system/bin/sh
+echo $(cat /proc/emmc | grep '"cache"' | awk '-F:' '{ print $1; }');

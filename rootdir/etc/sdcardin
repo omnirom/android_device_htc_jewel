@@ -1,0 +1,5 @@
+#!/system/bin/sh
+case $(getprop ro.partitioning) in
+    old)  echo /mnt/media_rw/sdcard0;;
+    *)  echo /data/media/;;
+esac;;

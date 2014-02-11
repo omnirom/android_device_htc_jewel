@@ -1,19 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*
+* Post 4.3 storage settings
+*
+-->
 <StorageList xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- removable is not set in nosdcard product -->
-    <storage android:mountPoint="/storage/sdcard0"
+    <storage android:mountPoint="/mnt/shell/emulated"
              android:storageDescription="@string/storage_internal"
              android:primary="true"
-             android:removable="false"
-             android:allowMassStorage="true" />
+             android:emulated="true"
+             android:mtpReserve="128" />
 
     <storage android:mountPoint="/storage/sdcard1"
              android:storageDescription="@string/storage_sd_card"
-             android:primary="false"
              android:removable="true"
-             android:allowMassStorage="true" />
+             android:allowMassStorage="true"
+             android:maxFileSize="4096" />
 
     <storage android:mountPoint="/storage/usbdisk"
              android:storageDescription="@string/storage_usb"
-             android:primary="false"
-             android:removable="true" />
+             android:removable="true"
+             android:allowMassStorage="true"
+             android:maxFileSize="4096" />
 </StorageList>
+

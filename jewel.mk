@@ -22,10 +22,15 @@ $(call inherit-product, device/htc/s4-common/s4.mk)
 DEVICE_PACKAGE_OVERLAYS += device/htc/jewel/overlay
 
 # Boot ramdisk setup
+TARGET_SETS_FSTAB := true
+
 PRODUCT_PACKAGES += \
-    fstab.qcom \
+    fstab-new.qcom \
+    fstab-old.qcom \
+    remount-new.qcom \
+    remount-old.qcom \
     init.target.rc \
-    remount.qcom
+    setfstab
 
 # Sound configs
 PRODUCT_COPY_FILES += \
@@ -59,8 +64,8 @@ PRODUCT_COPY_FILES += \
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    device/htc/jewel/rootdir/etc/fstab.qcom:recovery/root/fstab.qcom \
-    device/htc/jewel/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/htc/jewel/rootdir/etc/fstab-new.qcom:recovery/root/fstab.qcom \
+    device/htc/jewel/rootdir/etc/twrp-new.fstab:recovery/root/etc/twrp.fstab
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)

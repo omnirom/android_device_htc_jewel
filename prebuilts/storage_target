@@ -1,0 +1,5 @@
+#!/system/bin/sh
+case $(getprop sys.storage_rev) in
+    1)  echo /storage/sdcard0;;
+    *)  echo /storage/emulated;;
+esac;
